@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+body {
+    background-color: rgb(250, 250, 250);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.topbar {
+    height: 50px;
+    width: 100%;
+    /* margin: 10px; */
+    border-radius: 5px;
+
+}
+
+.sidebar {
+    height: calc(100vh - 80px);
+    border-radius: 5px;
+    /* background-color: red; */
+
+
+}
+
+.sidebar.open {
+    width: 200px;
+    margin: 0 10px;
+    transition: width 0.3s, margin 0.3s;
+}
+
+.sidebar.close {
+    width: 70px;
+    margin: 0 10px;
+    transition: width 0.3s, margin 0.3s;
+}
+
+.sidebar.close .menu-text {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sidebar.open .menu-text {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.main-area {
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 80px);
+}
+
+.main-area.open {
+    width: calc(100vw - 230px);
+
+    transition: 0.3s;
+}
+
+.main-area.close {
+    width: calc(100vw - 100px);
+    transition: 0.3s;
+}
+
+.hamburger {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px;
+    background-color: white;
+}
+
+.hamburger:hover {
+    background-color: rgb(62, 133, 255);
+    color: white;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+
+}
+
+.sidebar li {
+    margin: 5px 0;
+    
+    white-space: nowrap;
+}
+.sidebar li a{
+  display: block;
+  padding: 10px 0;
+}
+.sidebar li:hover {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px;
+    border-radius: 17px 0 0 17px;
+    border-right: 3px solid rgba(62, 140, 255, 1);
+    cursor: pointer;
+}
+
+.sidebar li:hover:hover a {
+    color: rgb(62, 133, 255);
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: rgb(105, 122, 141);
+    font-weight: 500;
+
+}
+
+@media screen and (max-width: 720px) {
+    .sidebar.close {
+        width: 200px;
+        /* margin: 0 10px; */
+        transition: width 0.3s, margin 0.3s;
+    }
+
+    .sidebar.open {
+        width: 50px;
+        margin: 0 0;
+        transition: width 0.3s, margin 0.3s;
+    }
+
+    .sidebar.open .menu-text {
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .sidebar.close .menu-text {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    /**/
+    .sidebar.close {
+        position: absolute;
+        z-index: 9999;
+        top: 50px;
+        background: rgba(255, 255, 255, 0.25);
+        /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-radius: 10px;
+        border: 1px solid rgba(40, 40, 40, 0.155);
+    }
+
+    /* .sidebar.close {
+        margin: 0;
+    } */
+
+    .main-area.close {
+        width: calc(100vw - 20px);
+        margin: 0 10px;
+        height: calc(100vh - 80px);
+    }
+
+    .main-area.open {
+        width: calc(100vw - 60px);
+        transition: 0.3s;
+    }
+}
+
+/* Custom CSS to style the table */
+.table-container {
+    max-width: 100%;
+    overflow: auto;
+    height: 100%;
+}
+
+table {
+    min-width: 100%;
+}
+
+.table-scroll thead {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    /* Change the background color as needed */
+    z-index: 1;
+    /* Ensure the header appears above the tbody when scrolling */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.avatar-upload {
+    position: relative;
+    max-width: 140px;
+    margin: 10px auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background-color: rgb(62, 133, 255);
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background-color: rgb(62, 133, 255);
+    color: white;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+}
+
+.avatar-upload .avatar-edit input+label:after {
+    content: '\ebb1';
+    /* Unicode for the Boxicons "pencil" icon */
+    font-family: 'boxicons';
+    /* Specify the Boxicons font-family */
+    color: #ffffff;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    width: 102px;
+    height: 102px;
+    position: relative;
+    border-radius: 100%;
+    border: 2px solid rgb(62, 133, 255);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-upload .avatar-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.select2-container .select2-selection--single{
+    height: unset;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #dadada;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    line-height: unset;
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+    padding-left: unset;
+    padding-right: unset;
+}
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    /* background-color: #EEE; */
+    box-sizing: border-box;
+    /* box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06); */
+    /* padding: 0.10rem; */
+    width: 100%;
+    /* font-size: 18px; */
+  }
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+    background-color: rgb(244, 244, 244);
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .4rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: rgb(62, 133, 255);
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    box-shadow: 0px 0px 8px 1px rgba(62, 142, 255, 0.8);
+    font-weight: 500;
+    color: white;
+  }
+  .table-sm-image{
+    min-width: 20px;
+    max-width:20px;
+    cursor: pointer;
+  }
